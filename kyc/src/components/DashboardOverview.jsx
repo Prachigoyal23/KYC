@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Statistic, Progress, Table, Row, Col } from "antd";
 import axios from "axios";
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, Tooltip, Legend, XAxis, YAxis, ResponsiveContainer } from "recharts";
-import BASE_URL from "Contant"
+import BASE_URL from "./Constant"
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
