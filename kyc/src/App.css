@@ -1,0 +1,131 @@
+/* Base Styles for all screen sizes */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f2f5;
+  margin: 0;
+}
+
+.ant-layout-header {
+  background-color: #001529;
+  color: #fff;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  font-size: 18px; /* Default font size for header title */
+}
+
+.ant-layout-content {
+  padding: 12px; /* Smaller padding on mobile */
+}
+
+.ant-card {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 12px;
+}
+
+.ant-card-head {
+  border-bottom: 1px solid #e8e8e8;
+  font-weight: 500;
+}
+
+.ant-statistic-title {
+  color: rgba(0, 0, 0, 0.45);
+  font-size: 12px; /* Smaller font for mobile stats */
+  margin-bottom: 4px;
+}
+
+.ant-statistic-content {
+  font-size: 20px; /* Smaller font for mobile stats */
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.ant-progress-outer {
+  margin-right: 0 !important;
+  padding-right: 0 !important;
+}
+
+.ant-progress-inner {
+  background-color: #f0f2f5;
+}
+
+.ant-tag {
+  font-weight: 500;
+  border-radius: 4px;
+  margin-top: 4px;
+  font-size: 10px; /* Smaller tag font for mobile */
+}
+
+/* Adjustments for Ant Design components */
+.ant-table-wrapper {
+  overflow-x: auto;
+}
+
+.ant-table {
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.ant-table-thead > tr > th {
+  background-color: #fafafa;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.85);
+  white-space: nowrap; /* Prevents column titles from wrapping */
+}
+
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background: #e6f7ff;
+}
+
+.ant-table-tbody > tr > td {
+  transition: background 0.3s;
+  white-space: nowrap; /* Keeps content in a single line */
+}
+
+.ant-select {
+  width: 100px !important; /* Smaller select width for mobile */
+}
+
+/* Media Queries for Responsiveness */
+
+/* Tablet and larger screens (min-width: 576px) */
+@media (min-width: 576px) {
+  .ant-layout-content {
+    padding: 24px;
+  }
+  
+  .ant-statistic-title {
+    font-size: 14px;
+  }
+  
+  .ant-statistic-content {
+    font-size: 24px;
+  }
+  
+  .ant-tag {
+    font-size: 12px;
+  }
+  
+  .ant-table {
+    font-size: 14px;
+  }
+  
+  .ant-select {
+    width: 120px !important;
+  }
+}
+
+/* Desktop screens (min-width: 992px) */
+@media (min-width: 992px) {
+  .ant-layout-header {
+    font-size: 24px;
+  }
+  
+  .ant-statistic-content {
+    font-size: 30px;
+  }
+}
