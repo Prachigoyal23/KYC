@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { Table, Progress, Tag } from "antd";
 import axios from "axios";
+import BASE_URL from "./Constant"
 
 const RiskAssessment = () => {
   const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/customers").then((res) => {
+    axios.get(BASE_URL+"/customers").then((res) => {
       setCustomers(res.data);
       setLoading(false);
     });

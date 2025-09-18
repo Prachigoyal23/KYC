@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Statistic, Progress, Table, Row, Col } from "antd";
 import axios from "axios";
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, Tooltip, Legend, XAxis, YAxis, ResponsiveContainer } from "recharts";
+import BASE_URL from "Contant"
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
@@ -10,7 +11,7 @@ const DashboardOverview = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/customers").then((res) => {
+    axios.get(BASE_URL+"/customers").then((res) => {
       setCustomers(res.data);
       setLoading(false);
     });

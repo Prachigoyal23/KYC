@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Table, Select, Button, Tag, message, Form } from "antd";
 import axios from "axios";
+import BASE_URL from "./Constant"
 
 const { Option } = Select;
 
@@ -11,7 +12,7 @@ const WorkflowAutomation = () => {
   const [updatingId, setUpdatingId] = useState(null);
 
   useEffect(() => {
-    axios.get("http://localhost:4000/customers").then((res) => {
+    axios.get(BASE_URL+"/customers").then((res) => {
       setCustomers(res.data);
       setLoading(false);
     });
@@ -30,7 +31,7 @@ const WorkflowAutomation = () => {
     }
     setUpdatingId(customerId);
     axios
-      .put(`http://localhost:4000/customer/${customerId}/status`, { status })
+      .put(BASE_URL+`/customer/${customerId}/status`, { status })
       .then(() => {
         setCustomers((prev) =>
           prev.map((c) =>
@@ -42,7 +43,7 @@ const WorkflowAutomation = () => {
         // Optional alert for high risk:
         const updatedCustomer = customers.find((c) => c.customerId === customerId);
         if (updatedCustomer && updatedCustomer.riskScore > 70) {
-          axios.post("http://localhost:4000/alerts", {
+          axios.post(BASE_URL+"/alerts", {
             customerId,
             status,
             message: "High risk customer status updated",
