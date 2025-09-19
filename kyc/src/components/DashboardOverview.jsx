@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Statistic, Progress, Table, Row, Col } from "antd";
 import axios from "axios";
 import { LineChart, Line, BarChart, Bar, PieChart, Pie, Cell, Tooltip, Legend, XAxis, YAxis, ResponsiveContainer } from "recharts";
-import BASE_URL from "./Constant"
+// import BASE_URL from "./Constant"
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
@@ -11,7 +11,7 @@ const DashboardOverview = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(BASE_URL+"/customers").then((res) => {
+    axios.get("https://kyc-ecy6.onrender.com/customers").then((res) => {
       setCustomers(res.data);
       setLoading(false);
     });
